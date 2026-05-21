@@ -121,6 +121,19 @@ Pick top skill, then derive downstream chain from flow table:
 
 ## Step 4 — Declare
 
+### PREFERRED — AskUserQuestion when confidence < 0.8
+
+If top-skill confidence is 0.5-0.8 (medium) OR < 0.5 (low), surface chain choice via AskUserQuestion:
+- `label`: Top chain — `<chain string>` (Recommended)
+- `label`: Second-best chain — `<chain string>`
+- `label`: Skip · direct answer · no chain
+
+User picks via UI. Then execute step 5 w/ picked chain.
+
+For confidence ≥ 0.8 → declare + execute inline (no AskUserQuestion needed · cheaper).
+
+### Fallback — inline declare
+
 Output to user verbatim BEFORE executing any tool. Format:
 
 ```

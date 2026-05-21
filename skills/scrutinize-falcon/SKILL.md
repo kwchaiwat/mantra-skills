@@ -186,6 +186,18 @@ Empty review = signal user that coverage may be incomplete.
 
 One-line verdict + biggest reason.
 
+### PREFERRED — AskUserQuestion verdict picker
+
+After findings table (step 4), surface verdict candidates via AskUserQuestion:
+- `label`: ship — no blockers · proceed (Recommended if no blockers)
+- `label`: fix-then-ship — majors fixable · address then commit
+- `label`: rework — architecture wrong · redesign
+- `label`: reject — premise wrong · scope-elsewhere
+
+User confirms verdict via UI. Then proceed to hand-off.
+
+Fallback (no AskUserQuestion): use inline format below.
+
 | Verdict | When |
 |---|---|
 | **ship** | no blockers · no majors OR all majors have justified accept |

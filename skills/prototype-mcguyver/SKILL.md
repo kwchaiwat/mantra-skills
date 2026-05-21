@@ -29,6 +29,15 @@ Then begin.
 
 ONE testable claim. NO multi-clause.
 
+### PREFERRED — AskUserQuestion when hypothesis vague
+
+If user's hypothesis is vague (e.g. "test if X works"), surface 3 sharpened candidates via AskUserQuestion:
+- `label`: sharper hypothesis 1
+- `label`: sharper hypothesis 2
+- `label`: sharper hypothesis 3 — narrowest (Recommended)
+
+User picks. Then proceed step 2 (success criterion).
+
 ### Refuse-without
 
 If no hypothesis → STOP. Output:

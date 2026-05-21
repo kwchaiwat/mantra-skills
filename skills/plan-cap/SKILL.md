@@ -64,6 +64,16 @@ Existing matches:
 
 NEVER design one. Always three. Anchoring on first idea is the bug.
 
+### PREFERRED — AskUserQuestion picker
+
+When AskUserQuestion tool available, present Alt A/B/C as single-select question. User picks via UI. Options format:
+- `label`: Alt approach (e.g. "Simplest — 90% value · minimal change (Recommended)")
+- `description`: pros · cons · effort estimate
+
+User picks. Then proceed step 4 (risk table).
+
+Fallback (no AskUserQuestion): use inline table below.
+
 | Alt | Approach | Pros | Cons | Effort |
 |---|---|---|---|---|
 | A | Simplest (90% of value, minimal change) | … | … | … |

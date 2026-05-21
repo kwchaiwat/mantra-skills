@@ -52,6 +52,16 @@ Tightening questions: <2-3 questions to disambiguate>
 
 NEVER pick one silently. Surface ambiguity.
 
+### PREFERRED — AskUserQuestion picker
+
+When AskUserQuestion tool available, surface 3 interpretations as single-select question. User picks via UI. Options format:
+- `label`: interpretation name (≤5 words · suffix "(Recommended)" on safest/narrowest)
+- `description`: implication · scope · impl difficulty
+
+User picks. Then proceed step 3.
+
+Fallback (no AskUserQuestion): use inline format below.
+
 Format:
 ```
 | # | Interpretation | Implication |
