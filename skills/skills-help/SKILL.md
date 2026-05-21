@@ -16,7 +16,7 @@ One-shot reference card. Display content below verbatim, then stop. No work perf
 
 > # mantra-skills — Quick Reference (v0.3)
 >
-> ## 26 active skills · 14 flow chains · 9arm + Karpathy + Matt Pocock
+> ## 26 active skills · 11 flow chains · 9arm + Karpathy + Matt Pocock
 >
 > Marketplace: https://github.com/kwchaiwat/mantra-skills
 > Source: `~/.claude/skills/<name>/SKILL.md`
@@ -25,23 +25,23 @@ One-shot reference card. Display content below verbatim, then stop. No work perf
 >
 > ## Flow chains — pick by task type
 >
-> | Task | Chain |
+> **Legend:**
+> - `STD-tail` = `plan-cap → tdd-stark → smoke-spidey → ship-rocket → note-kira`
+> - `[brackets]` = optional middle-step (fires if condition matches)
+>
+> | Purpose | Entry → ... → tail |
 > |---|---|
-> | **NEW FEATURE** | `jarvis → plan-cap → tdd-stark → smoke-spidey → ship-rocket → note-kira` |
-> | **GRILL-FIRST** | `grill-coach → plan-cap → tdd-stark → smoke-spidey → ship-rocket → note-kira` |
+> | **FEATURE** (clear or vague) | `jarvis [→ grill-coach if vague] → STD-tail` |
 > | **BUG REPORT** | `jarvis → debug-sherlock → tdd-stark → smoke-spidey → ship-rocket → post-mortem → note-kira` |
-> | **REFACTOR** | `jarvis → plan-cap(--refactor) → tdd-stark(--refactor) → smoke-spidey → ship-rocket` |
-> | **PRE-EDIT MAP** | `zoom-cerebro → tdd-stark OR plan-cap` |
-> | **WEEKLY ARCH** | `arch-yoda → plan-cap --refactor → tdd-stark → ship-rocket` |
-> | **SPIKE / POC** | `prototype-mcguyver → plan-cap (if keep) OR discard` |
-> | **CROSS-CUTTING** | `jarvis → plan-cap → avengers → (per-agent: tdd-stark → smoke-spidey) → ship-rocket` |
-> | **AD-HOC REVIEW** | `scrutinize-falcon → terminal (ship/fix/rework/reject)` |
+> | **REFACTOR** | `jarvis [→ zoom-cerebro to map first] → plan-cap(--refactor) → tdd-stark(--refactor) → smoke-spidey → ship-rocket` |
+> | **ARCH HEALTH** (weekly) | `arch-yoda → REFACTOR chain (if drift/debt)` |
+> | **SPIKE / POC** | `prototype-mcguyver → FEATURE chain (if keep) OR discard` |
+> | **CROSS-CUTTING** (3+ services) | `jarvis → plan-cap → avengers → (per-agent: tdd-stark → smoke-spidey) → ship-rocket` |
+> | **TUNE / EVAL / AUDIT** | `<rag-tune \| agent-eval-vision \| tenant-leak-audit> → tdd-stark → smoke-spidey → ship-rocket` |
+> | **PRE-COMMIT REVIEW** | `scrutinize-falcon → terminal (verdict ship/fix/rework/reject)` |
 > | **SESSION HANDOFF** | `handoff-coulson → terminal (vault note)` |
-> | **RAG TUNE** | `rag-tune → tdd-stark → smoke-spidey → ship-rocket` |
-> | **AGENT EVAL** | `agent-eval-vision → tdd-stark → smoke-spidey → ship-rocket` |
-> | **TENANT AUDIT** | `tenant-leak-audit → tdd-stark (if leak) → smoke-spidey → ship-rocket` |
 > | **RESEARCH** | `research-strange → terminal (cited brief)` |
-> | **DAILY OPS** | `daily-standup` (standalone) |
+> | **DAILY OPS** | `daily-standup → terminal` |
 >
 > ---
 >
@@ -154,7 +154,7 @@ One-shot reference card. Display content below verbatim, then stop. No work perf
 > - `handoff-coulson` added (session compact → vault note)
 > - §G CONTEXT.md ubiquitous-language pattern in project-patterns
 > - AskUserQuestion preferred path in 5 pick-1-of-N skills
-> - Roster: 16 → 26 active · 7 → 14 flow chains
+> - Roster: 16 → 26 active · 7 → 11 flow chains (collapsed tail-duplicates)
 >
 > ## Want more detail?
 >
