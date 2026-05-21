@@ -148,7 +148,7 @@ result: <what user gets after skill completes>.
 
 ## Step 5 — Register
 
-Two updates required:
+Four updates required EVERY TIME a new skill is forged:
 
 ### 5a. SKILLS-INDEX.md
 
@@ -166,12 +166,66 @@ Add flow chain if relevant:
 Use when: <trigger>.
 ```
 
-### 5b. Verify catalog load
+### 5b. Sync to marketplace + apply generic transform
 
-After write, output:
+```bash
+cp -r ~/.claude/skills/<skill-name> <project-root>/mantra-skills/skills/
+cd <project-root>/mantra-skills
+sed -i.bak \
+  -e 's|your project|your project|g' \
+  -e 's|project-patterns|project-patterns|g' \
+  -e 's|<project-root>/|<project-root>/|g' \
+  -e 's|multi-tenant SaaS|multi-tenant SaaS|g' \
+  skills/<skill-name>/SKILL.md && rm skills/<skill-name>/SKILL.md.bak
+```
+
+### 5c. **MANDATORY** — update README.md roster
+
+User instruction: "please update readme everytime".
+
+Add new skill to correct bucket section in `mantra-skills/README.md`:
+- **Engineering mantras (N)** — workflow skills
+- **Productivity mantras (N)** — non-code workflow
+- **Domain-specific mantras (N)** — adapt to stack
+- **Reference + meta (N)** — universal · template · meta
+- **Utility (N)** — explicit-invoke utilities
+
+Bump bucket count in header (e.g. `### Engineering mantras (5)` → `### Engineering mantras (6)`).
+Bump total count at top (e.g. `21 numbered-mantra Claude Code skills` → `22`).
+
+Add row in format:
+```markdown
+- **<skill-name>** — <hero> · <one-line power statement>
+```
+
+If skill adds new flow chain, append to "## Flow chains" section too.
+
+### 5d. Commit + push marketplace
+
+```bash
+cd <project-root>/mantra-skills
+git add skills/<skill-name> README.md
+git -c user.email="kw.chaiwat@gmail.com" -c user.name="kw-chaiwat" commit -m "feat(<skill-name>): add <hero> <power phrase>
+
+<2-line description>
+
+Mantra steps:
+- <bullet per step>
+
+Refuses without <gate condition>.
+"
+git push
+```
+
+### 5e. Verify catalog load
+
+After all 4 updates, output:
 ```
 Forged: ~/.claude/skills/<skill-name>/SKILL.md
 Frontmatter parses: <yes/no — check first 10 lines>
+Marketplace synced: <commit hash>
+README updated: bucket count bumped
+GitHub pushed: <repo URL>
 Catalog load: invoke /<skill-name> in fresh session to verify
 Handoff target: <downstream skill> exists at ~/.claude/skills/<downstream>/
 ```
