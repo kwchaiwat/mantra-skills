@@ -1,6 +1,6 @@
 # mantra-skills
 
-21 numbered-mantra Claude Code skills.
+22 numbered-mantra Claude Code skills.
 
 Each skill recites a verbatim mantra (1→2→3→4) with refuse-without gates and explicit hand-off chains. No skipping steps. No silent assumptions.
 
@@ -34,12 +34,13 @@ Verify: `/skills-help` → should list 21 skills.
 
 ## Roster (21 skills)
 
-### Engineering mantras (5)
+### Engineering mantras (6)
 - **plan-cap** — Captain America strategist · pre-code planning · 5-step mantra
 - **tdd-stark** — Iron Man iter · test-first impl · RED → GREEN → REFACTOR
 - **debug-sherlock** — Holmes deduction · reproduce · trace · falsify · breadcrumb
 - **smoke-spidey** — spider-sense · pre-deploy verify · curl + SSE + tenant + latency
 - **ship-rocket** — Rocket Raccoon launch · refuse-without-checklist · NEVER push main
+- **scrutinize-falcon** — Falcon scouts from above · outsider PR review BEFORE commit · intent · trace · verify · findings · verdict
 
 ### Productivity mantras (4)
 - **fury** — Nick Fury dispatch · entry-point router · auto-route every turn
