@@ -1,10 +1,10 @@
 # mantra-skills
 
-23 numbered-mantra Claude Code skills.
+27 numbered-mantra Claude Code skills.
 
 Each skill recites a verbatim mantra (1→2→3→4) with refuse-without gates and explicit hand-off chains. No skipping steps. No silent assumptions.
 
-Inspired by [thananon/9arm-skills](https://github.com/thananon/9arm-skills) (tiny-set workflow) + [Andrej Karpathy's LLM coding principles](https://github.com/multica-ai/andrej-karpathy-skills) (Think Before · Simplicity First · Surgical Changes · Goal-Driven).
+Inspired by [thananon/9arm-skills](https://github.com/thananon/9arm-skills) (tiny-set workflow) + [Andrej Karpathy's LLM coding principles](https://github.com/multica-ai/andrej-karpathy-skills) (Think Before · Simplicity First · Surgical Changes · Goal-Driven) + [mattpocock/skills](https://github.com/mattpocock/skills) (grill-before-coding · zoom-out · design-every-day · throwaway-prototype · ubiquitous-language).
 
 ## Install
 
@@ -17,34 +17,44 @@ git clone https://github.com/kw-chaiwat/mantra-skills.git
 ln -s "$(pwd)/mantra-skills/skills"/* ~/.claude/skills/
 ```
 
-Verify: `/skills-help` → should list 21 skills.
+Verify: `/skills-help` → should list 27 skills.
 
 ## Quick start
 
 ```
 /fury                     # auto-route entry point — picks chain for you
+/grill-coach "add X"      # alignment interview · 3 interpretations · acceptance
 /plan-cap "add feature X" # pre-code planning · 3 alternatives · risk table
+/zoom-cerebro <target>    # blast-radius map before editing critical file
+/prototype-mcguyver       # throwaway POC · ONE hypothesis · time-budgeted
 /debug-sherlock           # debug discipline · reproduce → falsify → breadcrumb
 /tdd-stark                # test-first impl · RED → GREEN → REFACTOR
+/scrutinize-falcon        # pre-commit second opinion · severity-ranked findings
 /smoke-spidey             # post-impl verify · curl + leak check + tenant
 /ship-rocket              # pre-merge gate · refuse-without-checklist
+/arch-yoda <dir>          # weekly architecture health check
+/handoff-coulson          # session compact → next-pilot briefing
 /note-kira                # vault sync · canonical record
 /skills-help              # quick reference card
 ```
 
-## Roster (21 skills)
+## Roster (27 skills)
 
-### Engineering mantras (6)
+### Engineering mantras (9)
 - **plan-cap** — Captain America strategist · pre-code planning · 5-step mantra
 - **tdd-stark** — Iron Man iter · test-first impl · RED → GREEN → REFACTOR
 - **debug-sherlock** — Holmes deduction · reproduce · trace · falsify · breadcrumb
 - **smoke-spidey** — spider-sense · pre-deploy verify · curl + SSE + tenant + latency
 - **ship-rocket** — Rocket Raccoon launch · refuse-without-checklist · NEVER push main
 - **scrutinize-falcon** — Falcon scouts from above · outsider PR review BEFORE commit · intent · trace · verify · findings · verdict
+- **zoom-cerebro** — Cerebro neighborhood scan · pre-edit blast-radius map · target · callers · callees · cross-cutting · verdict
+- **arch-yoda** — Yoda meditates architecture · weekly refactor health · churn · smells · rank · verdict
+- **prototype-mcguyver** — MacGyver throwaway POC · ONE hypothesis · time-budgeted · constraints relaxed · verdict
 
-### Productivity mantras (5)
+### Productivity mantras (6)
 - **fury** — Nick Fury dispatch · entry-point router · auto-route every turn
 - **intake-jarvis** — JARVIS triage · symptom router (bug / feature / refactor)
+- **grill-coach** — Coach interrogates pre-code · restate · 3 interpretations · acceptance · out-of-scope · confirm
 - **post-mortem** — canonical bug record · 9-section structure · slip-through analysis
 - **note-kira** — Death Note records · Obsidian vault sync
 - **handoff-coulson** — Agent Coulson briefs next pilot · session compact → handoff doc · scope · facts · decisions · pending · briefing
@@ -78,16 +88,22 @@ Verify: `/skills-help` → should list 21 skills.
 ## Flow chains
 
 ```
-NEW FEATURE:   intake-jarvis → plan-cap → tdd-stark → smoke-spidey → ship-rocket → note-kira
-BUG REPORT:    intake-jarvis → debug-sherlock → tdd-stark → smoke-spidey → ship-rocket → post-mortem → note-kira
-REFACTOR:      intake-jarvis → plan-cap(--refactor) → tdd-stark(--refactor) → smoke-spidey → ship-rocket
-CROSS-CUTTING: intake-jarvis → plan-cap → avengers → (per-agent: tdd-stark → smoke-spidey) → ship-rocket
-RAG TUNE:      rag-tune → tdd-stark → smoke-spidey → ship-rocket
-AGENT EVAL:    agent-eval-vision → tdd-stark → smoke-spidey → ship-rocket
-TENANT AUDIT:  tenant-leak-audit → tdd-stark (if leak) → smoke-spidey → ship-rocket
-RESEARCH:      research-strange (terminal — brief w/ cited evidence)
-META BUILD:    forge-stark (meta — build new skill)
-DAILY OPS:     daily-standup (standalone)
+NEW FEATURE:        intake-jarvis → plan-cap → tdd-stark → smoke-spidey → ship-rocket → note-kira
+GRILL-FIRST:        grill-coach → plan-cap → tdd-stark → smoke-spidey → ship-rocket → note-kira   (when ask vague)
+BUG REPORT:         intake-jarvis → debug-sherlock → tdd-stark → smoke-spidey → ship-rocket → post-mortem → note-kira
+REFACTOR:           intake-jarvis → plan-cap(--refactor) → tdd-stark(--refactor) → smoke-spidey → ship-rocket
+PRE-EDIT MAP:       zoom-cerebro → tdd-stark OR plan-cap   (before touching critical/shared files)
+WEEKLY ARCH:        arch-yoda → plan-cap --refactor → tdd-stark → ship-rocket   (architecture health)
+SPIKE / POC:        prototype-mcguyver → plan-cap (if keep) OR discard
+CROSS-CUTTING:      intake-jarvis → plan-cap → avengers → (per-agent: tdd-stark → smoke-spidey) → ship-rocket
+RAG TUNE:           rag-tune → tdd-stark → smoke-spidey → ship-rocket
+AGENT EVAL:         agent-eval-vision → tdd-stark → smoke-spidey → ship-rocket
+TENANT AUDIT:       tenant-leak-audit → tdd-stark (if leak) → smoke-spidey → ship-rocket
+AD-HOC REVIEW:      scrutinize-falcon → terminal (ship / fix / rework / reject)
+SESSION HANDOFF:    handoff-coulson → terminal (vault note for next session)
+RESEARCH:           research-strange (terminal — brief w/ cited evidence)
+META BUILD:         forge-stark (meta — build new skill)
+DAILY OPS:          daily-standup (standalone)
 ```
 
 ## Customize to your project
@@ -111,8 +127,9 @@ See [CUSTOMIZATION.md](./CUSTOMIZATION.md) for step-by-step fork guide.
 
 ## Credits
 
-- Workflow design — [thananon/9arm-skills](https://github.com/thananon/9arm-skills)
-- LLM coding principles — [Andrej Karpathy](https://x.com/karpathy/status/2015883857489522876) via [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
+- Workflow design — [thananon/9arm-skills](https://github.com/thananon/9arm-skills) (tiny-set · numbered mantra · handoff arrows)
+- LLM coding principles — [Andrej Karpathy](https://x.com/karpathy/status/2015883857489522876) via [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) (Think Before · Simplicity First · Surgical Changes · Goal-Driven)
+- Process patterns — [mattpocock/skills](https://github.com/mattpocock/skills) 98k⭐ (grill-before-coding · zoom-out · design-every-day · throwaway-prototype · ubiquitous-language)
 - Hero naming — Marvel / DC household names matched to power
 
 ## License

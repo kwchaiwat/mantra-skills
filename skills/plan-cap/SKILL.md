@@ -25,6 +25,8 @@ Then begin.
 
 ## Step 1 — State goal
 
+> **Karpathy P1 — Think Before Coding.** Don't assume. Don't hide confusion. Surface tradeoffs. Refuse vague asks. See `karpathy-rules` §P1.
+
 One sentence in your own words. NOT user's words echoed back. NOT a list of features.
 
 If can't state in one sentence:

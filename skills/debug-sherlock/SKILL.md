@@ -94,6 +94,8 @@ If symptom is timeout / recursion / tool-loop-exhaust:
 
 ## Step 3 — Falsify hypothesis
 
+> **Karpathy P1 — Think Before Coding.** 3-5 ranked hypotheses. Don't anchor on first plausible. Surface what you don't know. Run disproof FIRST. See `karpathy-rules` §P1.
+
 When candidate root cause surfaces, SCRUTINIZE before testing.
 
 - Does it explain symptom end-to-end? Walk it through.

@@ -41,6 +41,8 @@ If multiple match → pick dominant. If genuinely ambiguous → ASK user one que
 
 ## Step 2 — Bug + repro check
 
+> **Karpathy P1 — Think Before Coding.** Don't hypothesize without repro. Refuse vague bugs. Repro artifact is the gate. See `karpathy-rules` §P1.
+
 If class = bug, check repro:
 
 **Repro present:**

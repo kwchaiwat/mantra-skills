@@ -65,6 +65,8 @@ Run test. Confirm PASS. If other tests now broken → fix before moving on.
 
 ## Step 3 — REFACTOR
 
+> **Karpathy P2 + P3 — Simplicity + Surgical.** Senior-engineer test — if feels bloated, simplify. Refactor only YOUR diff, NOT adjacent code. Match existing style. See `karpathy-rules` §P2 + §P3.
+
 Clean up impl AND test. Both.
 
 Apply your project coding rules (CODING_CONVENTIONS.md):

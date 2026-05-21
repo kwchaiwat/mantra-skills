@@ -67,6 +67,8 @@ If any ✗ → STOP. Output `**Refusing to ship: <gate> failed. Need: <action>**
 
 ## Step 2 — Adversarial scrutinize
 
+> **Karpathy P3 — Surgical Changes.** Every changed line must trace to user's request. Adjacent "improvements" are bugs in disguise. Senior-engineer test (P2) mandatory — if diff feels bloated, refuse to ship. See `karpathy-rules` §P2 + §P3.
+
 Stand outside. Read the diff cold.
 
 Adopt from 9arm scrutinize:

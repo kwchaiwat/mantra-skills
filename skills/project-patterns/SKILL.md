@@ -430,6 +430,84 @@ Use `$(cat graphify-out/.graphify_python)` instead of `python3` in this repo.
 
 ---
 
+## Section G — CONTEXT.md ubiquitous language
+
+Inspired by [mattpocock/skills](https://github.com/mattpocock/skills) "ubiquitous language" pattern.
+
+### Why
+
+Domain jargon table prevents 20-word explanations every turn. AI uses YOUR project's terms (not generic LLM jargon). Token savings + naming consistency across humans and AI.
+
+### Where
+
+`<service-root>/CONTEXT.md` — per-service domain vocabulary. Sits next to CLAUDE.md. Read AUTO by other skills (plan-cap step 1 if exists).
+
+### Format
+
+```markdown
+# CONTEXT — <service> Ubiquitous Language
+
+## Domain terms
+
+| Term | Definition | NOT to be confused with |
+|---|---|---|
+| **<noun>** | <one-sentence meaning in YOUR project> | <generic term that sounds similar> |
+
+## Verbs / actions
+
+| Verb | What it means here |
+|---|---|
+| **<verb>** | <project-specific action> |
+
+## Anti-vocabulary
+
+DO NOT use these generic terms when YOUR project has a specific one:
+- generic word → use OUR term: <specific>
+
+## Cross-ref
+
+- Architecture: <docs path>
+- Code entry point: <file:line>
+```
+
+### Example (LLM/agent backend)
+
+```markdown
+# CONTEXT — <agent-backend>
+
+| Term | Definition | NOT |
+|---|---|---|
+| **band** | a tenant (brand / chain) | "customer" |
+| **agent** | a LangGraph node w/ system prompt + tool list | OpenAI Assistant |
+| **format A/B/C** | message bubble template for chat output | UI component |
+| **gate** | ReasoningChannelGate — strips raw JSON from stream | auth gate |
+| **rescue** | empty-reply fallback path | retry logic |
+| **thrash zone** | files that flap often during stream-pipeline bug hunts | hot files |
+
+DO NOT use: "tenant" → use "band". "tool call" → use "tool invocation". "model" alone → say "LLM client" or "provider config".
+```
+
+### How to use
+
+1. New repo? `touch CONTEXT.md` and seed top 5-10 terms in first session.
+2. Every time AI uses generic term that has project-specific synonym → add to anti-vocab.
+3. Bi-monthly review — prune dead terms, add new ones.
+4. Reference in other skills — `plan-cap` step 1 reads CONTEXT.md if exists.
+
+### Refuse-by-rule
+
+If editing this service and CONTEXT.md is missing → suggest creating one as separate task (low priority for fresh repos · high priority for high-jargon services).
+
+### Token savings
+
+| Without CONTEXT.md | With CONTEXT.md |
+|---|---|
+| "the tenant — by which I mean a brand or chain…" (~15 tokens) | "band" (1 token) |
+| 8 turns of disambiguation per session | 0 |
+| Generic terms shipped to docs | Project-specific terms persist |
+
+---
+
 ## Hand off
 
 - After scaffolding/file placement → hand off to `tdd-stark` for the actual write

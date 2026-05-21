@@ -14,9 +14,11 @@ One-shot reference card. Display content below verbatim, then stop. No work perf
 
 ## Output to user verbatim
 
-> # your project Claude Code Skills — Quick Reference
+> # mantra-skills — Quick Reference
 >
-> ## 16 active skills · 7 flow chains · 9arm-style numbered mantras
+> ## 27 active skills · 14 flow chains · 9arm + Karpathy + Matt Pocock
+>
+> NOTE: this card is stale — list below is from v1 (16 skills). Use marketplace README.md for current 27-skill roster.
 >
 > Full handbook: `/Users/chaiwat/Documents/Obsidian Vault/claude-code/08-skills-handbook-9arm-flow.md`
 > Index: `~/.claude/skills/SKILLS-INDEX.md`
