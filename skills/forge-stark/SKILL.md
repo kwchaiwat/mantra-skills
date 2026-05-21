@@ -60,7 +60,7 @@ Pick mantra structure by skill type:
 |---|---|---|
 | **mantra-5** | 5 numbered steps | most workflow skills (default — `plan-cap`, `tdd-stark`, `smoke-spidey`, `ship-rocket`, `note-kira`, `rag-tune`, `agent-eval-vision`, `tenant-leak-audit`) |
 | **mantra-4** | 4 steps | diagnostic / falsify skills (`debug-sherlock`) |
-| **mantra-7** | 7 steps | classifier / router skills (`intake-jarvis`, `fury`) |
+| **mantra-7** | 7 steps | classifier / router skills (`jarvis` — merged from former `fury` + `intake-jarvis`) |
 | **structure-only** | 9-section structure | record skills (`post-mortem`) |
 | **one-shot** | terminal display | reference cards (`skills-help`) |
 

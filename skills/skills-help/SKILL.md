@@ -104,7 +104,7 @@ One-shot reference card. Display content below verbatim, then stop. No work perf
 > | Situation | Action |
 > |---|---|
 > | Mantra too rigid for trivial fix | "skip mantra, trivial" |
-> | Need direct answer, no flow | use `intake-jarvis` step 5 (question) |
+> | Need direct answer, no flow | use `jarvis` step 7 (question class → direct answer) |
 > | GateGuard blocks setup | `export ECC_GATEGUARD=off` |
 > | ECC skill crowds out user skill | see TRIM-ECC-PLAN.md option 2 |
 > | Stuck in flow | "abort" |

@@ -1,6 +1,6 @@
 # mantra-skills
 
-27 numbered-mantra Claude Code skills.
+26 numbered-mantra Claude Code skills.
 
 Each skill recites a verbatim mantra (1→2→3→4) with refuse-without gates and explicit hand-off chains. No skipping steps. No silent assumptions.
 
@@ -17,12 +17,12 @@ git clone https://github.com/kw-chaiwat/mantra-skills.git
 ln -s "$(pwd)/mantra-skills/skills"/* ~/.claude/skills/
 ```
 
-Verify: `/skills-help` → should list 27 skills.
+Verify: `/skills-help` → should list 26 skills.
 
 ## Quick start
 
 ```
-/fury                     # auto-route entry point — picks chain for you
+/jarvis                   # auto-route entry point — picks chain · classifies · bug gate (was fury + jarvis · now merged)
 /grill-coach "add X"      # alignment interview · 3 interpretations · acceptance
 /plan-cap "add feature X" # pre-code planning · 3 alternatives · risk table
 /zoom-cerebro <target>    # blast-radius map before editing critical file
@@ -38,7 +38,7 @@ Verify: `/skills-help` → should list 27 skills.
 /skills-help              # quick reference card
 ```
 
-## Roster (27 skills)
+## Roster (26 skills)
 
 ### Engineering mantras (9)
 - **plan-cap** — Captain America strategist · pre-code planning · 5-step mantra
@@ -51,9 +51,8 @@ Verify: `/skills-help` → should list 27 skills.
 - **arch-yoda** — Yoda meditates architecture · weekly refactor health · churn · smells · rank · verdict
 - **prototype-mcguyver** — MacGyver throwaway POC · ONE hypothesis · time-budgeted · constraints relaxed · verdict
 
-### Productivity mantras (6)
-- **fury** — Nick Fury dispatch · entry-point router · auto-route every turn
-- **intake-jarvis** — JARVIS triage · symptom router (bug / feature / refactor)
+### Productivity mantras (5)
+- **jarvis** — Iron Man's JARVIS · single entry-point router + classifier + bug-repro gate · 7-step mantra (replaces former `fury` + `jarvis`)
 - **grill-coach** — Coach interrogates pre-code · restate · 3 interpretations · acceptance · out-of-scope · confirm
 - **post-mortem** — canonical bug record · 9-section structure · slip-through analysis
 - **note-kira** — Death Note records · Obsidian vault sync
@@ -88,14 +87,14 @@ Verify: `/skills-help` → should list 27 skills.
 ## Flow chains
 
 ```
-NEW FEATURE:        intake-jarvis → plan-cap → tdd-stark → smoke-spidey → ship-rocket → note-kira
+NEW FEATURE:        jarvis → plan-cap → tdd-stark → smoke-spidey → ship-rocket → note-kira
 GRILL-FIRST:        grill-coach → plan-cap → tdd-stark → smoke-spidey → ship-rocket → note-kira   (when ask vague)
-BUG REPORT:         intake-jarvis → debug-sherlock → tdd-stark → smoke-spidey → ship-rocket → post-mortem → note-kira
-REFACTOR:           intake-jarvis → plan-cap(--refactor) → tdd-stark(--refactor) → smoke-spidey → ship-rocket
+BUG REPORT:         jarvis → debug-sherlock → tdd-stark → smoke-spidey → ship-rocket → post-mortem → note-kira
+REFACTOR:           jarvis → plan-cap(--refactor) → tdd-stark(--refactor) → smoke-spidey → ship-rocket
 PRE-EDIT MAP:       zoom-cerebro → tdd-stark OR plan-cap   (before touching critical/shared files)
 WEEKLY ARCH:        arch-yoda → plan-cap --refactor → tdd-stark → ship-rocket   (architecture health)
 SPIKE / POC:        prototype-mcguyver → plan-cap (if keep) OR discard
-CROSS-CUTTING:      intake-jarvis → plan-cap → avengers → (per-agent: tdd-stark → smoke-spidey) → ship-rocket
+CROSS-CUTTING:      jarvis → plan-cap → avengers → (per-agent: tdd-stark → smoke-spidey) → ship-rocket
 RAG TUNE:           rag-tune → tdd-stark → smoke-spidey → ship-rocket
 AGENT EVAL:         agent-eval-vision → tdd-stark → smoke-spidey → ship-rocket
 TENANT AUDIT:       tenant-leak-audit → tdd-stark (if leak) → smoke-spidey → ship-rocket

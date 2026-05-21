@@ -45,7 +45,7 @@ Reference skill — applied by other mantras as universal rules. NOT a workflow 
 ### Cross-ref
 
 - `plan-cap` step 1 + step 3 = direct embodiment
-- `intake-jarvis` step 2 (refuse vague bugs)
+- `jarvis` step 2 (refuse vague bugs)
 - `debug-sherlock` step 3 (3-5 ranked hypotheses)
 
 ---
@@ -176,7 +176,7 @@ If asked "fix X" but you find Y also broken:
 ### debug-sherlock
 - Step 3 Falsify: 3-5 hypotheses (Principle 1)
 
-### intake-jarvis
+### jarvis
 - Step 2 repro check: refuse vague (Principle 1)
 
 ### --refactor work (any skill)

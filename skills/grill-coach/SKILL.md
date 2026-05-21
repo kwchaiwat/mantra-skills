@@ -1,7 +1,7 @@
 ---
 name: grill-coach
 description: Alignment interview before coding — interrogate intent, surface assumptions, lock acceptance criteria. Five-step mantra — restate · interpret · accept · out-of-scope · confirm. Inspired by mattpocock/skills "grill before coding". Refuses without actual feature/refactor ask (skips clarifying questions, greetings). Use when user gives ambiguous feature request that risks over-engineering or wrong-direction work.
-when_to_use: "Slash triggers — /grill-coach, /grill, /coach. Hero triggers — coach interrogate, alignment check, grill intent, push back. Keyword triggers — alignment, what do you mean, clarify scope, before I code, acceptance criteria, out of scope, vague request, ambiguous spec, what's the real ask, double-check, สอบถาม, ถามให้ชัด. Does NOT fire on — clear single-verb tasks · already-planned features (use plan-cap) · simple questions (use intake-jarvis)."
+when_to_use: "Slash triggers — /grill-coach, /grill, /coach. Hero triggers — coach interrogate, alignment check, grill intent, push back. Keyword triggers — alignment, what do you mean, clarify scope, before I code, acceptance criteria, out of scope, vague request, ambiguous spec, what's the real ask, double-check, สอบถาม, ถามให้ชัด. Does NOT fire on — clear single-verb tasks · already-planned features (use plan-cap) · simple questions (use jarvis)."
 allowed-tools: "Read"
 disable-model-invocation: false
 ---
@@ -153,7 +153,7 @@ After confirm → hand off plan-cap with locked goal.
 | Skill | When |
 |---|---|
 | **grill-coach** | Ambiguous feature ask · risk of wrong direction |
-| **intake-jarvis** | Classify ask (bug/feature/refactor) · route |
+| **jarvis** | Classify ask (bug/feature/refactor) · route |
 | **plan-cap** | Goal locked · ready to plan implementation |
 
 Grill = interrogation BEFORE intake (or after intake if ambiguous).
@@ -164,7 +164,7 @@ Grill = interrogation BEFORE intake (or after intake if ambiguous).
 |---|---|
 | "add notifications" | 3 interpretations (email · push · in-app) · pick · acceptance |
 | "make it faster" | 3 interpretations (frontend · backend · DB) · acceptance = SLO |
-| "fix the bug" | refuse → route to intake-jarvis (need repro) |
+| "fix the bug" | refuse → route to jarvis (need repro) |
 | "improve UX" | 3 interpretations (which screen · which interaction) |
 | "build dashboard" | 3 interpretations (which metrics · which users · which layout) |
 
@@ -173,13 +173,13 @@ Grill = interrogation BEFORE intake (or after intake if ambiguous).
 - User confirms → hand off `plan-cap` with locked goal
 - User wants pure research first → hand off `research-strange`
 - User redirects fundamentally → restart at step 1
-- Ask becomes clear bug → hand off `intake-jarvis` (skip grill)
+- Ask becomes clear bug → hand off `jarvis` (skip grill)
 
 ## Cross-ref
 
 - `karpathy-rules` §P1 — Think Before Coding
 - `plan-cap` step 1 — receives locked goal from here
-- `intake-jarvis` — different scope (classify, not interrogate)
+- `jarvis` — different scope (classify, not interrogate)
 - Inspired by [mattpocock/skills](https://github.com/mattpocock/skills) (98k⭐) "grill before coding"
 
 result: locked goal · 3 interpretations picked · acceptance criteria written · out-of-scope explicit · plan-cap ready.
