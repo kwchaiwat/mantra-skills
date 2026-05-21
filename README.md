@@ -1,6 +1,6 @@
 # mantra-skills
 
-22 numbered-mantra Claude Code skills.
+23 numbered-mantra Claude Code skills.
 
 Each skill recites a verbatim mantra (1→2→3→4) with refuse-without gates and explicit hand-off chains. No skipping steps. No silent assumptions.
 
@@ -42,11 +42,12 @@ Verify: `/skills-help` → should list 21 skills.
 - **ship-rocket** — Rocket Raccoon launch · refuse-without-checklist · NEVER push main
 - **scrutinize-falcon** — Falcon scouts from above · outsider PR review BEFORE commit · intent · trace · verify · findings · verdict
 
-### Productivity mantras (4)
+### Productivity mantras (5)
 - **fury** — Nick Fury dispatch · entry-point router · auto-route every turn
 - **intake-jarvis** — JARVIS triage · symptom router (bug / feature / refactor)
 - **post-mortem** — canonical bug record · 9-section structure · slip-through analysis
 - **note-kira** — Death Note records · Obsidian vault sync
+- **handoff-coulson** — Agent Coulson briefs next pilot · session compact → handoff doc · scope · facts · decisions · pending · briefing
 
 ### Domain-specific mantras (3 — adapt to your stack)
 - **rag-tune** — Azure AI Search + Cohere rerank + CRAG tuning (adopt template, swap vendors)
