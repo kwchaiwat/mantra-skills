@@ -1,12 +1,12 @@
 ---
 name: note-kira
-description: Canonical record sync to Obsidian vault — detect topic, route to vault subfolder, frontmatter + tags, cross-link memory + drive, update MEMORY.md if memory-worthy. Replaces deprecated take-note-ob v1 with explicit numbered mantra. Triggered after commits via hook + manual invocation.
-when_to_use: "Keyword triggers — take note, take-note-ob, document this, note this, save to vault, update vault, sync vault, vault sync, obsidian note, write up, document the session, /take-note-ob, doc this fix, doc this change, journal, summarize session, สรุปงาน, จดบันทึก"
+description: Canonical record sync to Obsidian vault — detect topic, route to vault subfolder, frontmatter + tags, cross-link memory + drive, update MEMORY.md if memory-worthy. Replaces deprecated note-kira v1 with explicit numbered mantra. Triggered after commits via hook + manual invocation.
+when_to_use: "Keyword triggers — take note, note-kira, document this, note this, save to vault, update vault, sync vault, vault sync, obsidian note, write up, document the session, /note-kira, doc this fix, doc this change, journal, summarize session, สรุปงาน, จดบันทึก"
 allowed-tools: "Bash(git *) Bash(ls *) Bash(cat *) Bash(mkdir *) Bash(date *) Read Edit Write"
 disable-model-invocation: false
 ---
 
-# /take-note-ob — Vault sync mantra
+# /note-kira — Vault sync mantra
 
 Sync canonical record to Obsidian vault. Runs after commit (hook) or by explicit invoke.
 

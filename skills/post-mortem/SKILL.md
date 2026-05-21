@@ -1,6 +1,6 @@
 ---
 name: post-mortem
-description: Canonical engineering record of a fixed bug — root cause, mechanism, fix, validation, slip-through. Adopted from 9arm-skills post-mortem. Refuses to draft without reliable repro / known cause / fix PR / validated fix. Hand off to take-note-ob for vault sync.
+description: Canonical engineering record of a fixed bug — root cause, mechanism, fix, validation, slip-through. Adopted from 9arm-skills post-mortem. Refuses to draft without reliable repro / known cause / fix PR / validated fix. Hand off to note-kira for vault sync.
 when_to_use: "Keyword triggers — post-mortem, postmortem, RCA, root cause analysis, document this fix, write up root cause, close out this bug, write up bug, slip through, why missed, what happened report, bug retrospective, RCA writeup"
 allowed-tools: "Bash(git *) Bash(grep *) Bash(rg *) Bash(ls *) Bash(cat *) Read Edit Write"
 disable-model-invocation: false
@@ -14,7 +14,7 @@ Adopted from 9arm-skills post-mortem. Engineer-audience. Code identifiers welcom
 
 - Debug session has landed a real fix, validated.
 - User says "/post-mortem" / "write the post-mortem" / "RCA" / "document this fix" / "close out this bug".
-- Proactively offer after debug-mantra step 4 lands a validated fix.
+- Proactively offer after debug-sherlock step 4 lands a validated fix.
 
 ## When NOT to use
 
@@ -31,7 +31,7 @@ Before writing single line, confirm all four. List what's missing, then stop:
 - [ ] **Fix identified** (PR / commit / branch pointer).
 - [ ] **Fix validated** (original repro now passes; failing test now succeeds).
 
-Map directly to debug-mantra steps 1–4. If you came via debug-mantra, the breadcrumb ledger from step 4 is your raw material — pull from it.
+Map directly to debug-sherlock steps 1–4. If you came via debug-sherlock, the breadcrumb ledger from step 4 is your raw material — pull from it.
 
 ---
 
@@ -84,13 +84,13 @@ What changed and **why this change addresses root cause rather than hiding sympt
 
 If previous fix attempt papered over symptom, name it and explain what was wrong — that history is part of cause.
 
-For your project: if fix bumps MAX_*, RECURSION_LIMIT, retry counts → that is symptom-cover, NOT root cause. Re-open. (diagnose-before-tune rule, absorbed into debug-mantra step 3.)
+For your project: if fix bumps MAX_*, RECURSION_LIMIT, retry counts → that is symptom-cover, NOT root cause. Re-open. (diagnose-before-tune rule, absorbed into debug-sherlock step 3.)
 
 ### 6. How it was found
 
 Short. The debugging path:
 - Repro that made it deterministic
-- Tools that cracked it (debugger, source tracing, knob enumeration, in-code instrumentation — debug-mantra step 2 cascade)
+- Tools that cracked it (debugger, source tracing, knob enumeration, in-code instrumentation — debug-sherlock step 2 cascade)
 - Hypotheses tried + rejected, one-line reason each (pull from breadcrumb ledger)
 - Single experiment that confirmed cause
 
@@ -137,7 +137,7 @@ date: YYYY-MM-DD
 service: <service>
 branch: <branch>
 commits: [<SHA1>, <SHA2>]
-mode: <catalog-mode-name>      # if matches debug-mantra catalog
+mode: <catalog-mode-name>      # if matches debug-sherlock catalog
 severity: <minor | major | critical>
 slip-through: <test-gap | review-gap | monitoring-gap | deploy-gap>
 ---
@@ -158,6 +158,6 @@ slip-through: <test-gap | review-gap | monitoring-gap | deploy-gap>
 
 - Draft complete → hand off `note-kira` to sync to vault
 - Slip-through identifies missing smoke step → propose smoke catalog extension
-- Slip-through identifies missing test → propose tdd-implement task
+- Slip-through identifies missing test → propose tdd-stark task
 
 result: canonical post-mortem written, vault-bound, slip-through actionable.

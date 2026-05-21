@@ -6,9 +6,9 @@ allowed-tools: "Bash(curl *) Bash(docker *) Bash(grep *) Bash(rg *) Bash(npm *) 
 disable-model-invocation: false
 ---
 
-# /debug-mantra — Four-step debugging discipline
+# /debug-sherlock — Four-step debugging discipline
 
-Adopted from 9arm-skills debug-mantra. Recite verbatim. Apply in order. NO fix proposals before step 4 complete.
+Adopted from 9arm-skills debug-sherlock. Recite verbatim. Apply in order. NO fix proposals before step 4 complete.
 
 ## Recite this — verbatim, as the first thing in your first response
 

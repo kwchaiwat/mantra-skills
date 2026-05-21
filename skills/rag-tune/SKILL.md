@@ -150,7 +150,7 @@ Update baseline: rename `/tmp/rag-variant-*.json` → committed `test/replay-har
 ### Rollback path (REVERT / REWORK)
 
 - Discard variant config
-- Update breadcrumb ledger w/ disproven hypothesis (for debug-mantra cross-reference)
+- Update breadcrumb ledger w/ disproven hypothesis (for debug-sherlock cross-reference)
 - Loop back to step 2 with revised hypothesis
 
 NEVER ship variant w/o regression test on new metric floor. Else next regression goes undetected.

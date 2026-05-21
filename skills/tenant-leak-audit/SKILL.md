@@ -271,7 +271,7 @@ Hand off:
 
 ## Hand off
 
-- 0 leaks found → done, output audit summary to vault via take-note-ob
+- 0 leaks found → done, output audit summary to vault via note-kira
 - CRITICAL leak → `tdd-stark` (fix) → `smoke-spidey` (verify) → `ship-rocket`
 - Pattern repeats across files → propose base repository abstraction, hand off `plan-cap`
 - Unclear if leak (test inconclusive) → hand off `debug-sherlock`

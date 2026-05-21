@@ -1,6 +1,6 @@
 ---
 name: agent-eval-vision
-description: Multi-agent A/B eval mantra for your project ai-agent-backend — head-to-head comparison of sale / hotel / reservation / forecast agent variants on golden dataset. Five-step ordered mantra. Golden ready → baseline run → variant run → compare matrix (RAGAS + cost + latency) → verdict (ship / rework / reject). Refuses without golden dataset + both variants deployable. Hand off to ship (variant green) or debug-mantra (regression).
+description: Multi-agent A/B eval mantra for your project ai-agent-backend — head-to-head comparison of sale / hotel / reservation / forecast agent variants on golden dataset. Five-step ordered mantra. Golden ready → baseline run → variant run → compare matrix (RAGAS + cost + latency) → verdict (ship / rework / reject). Refuses without golden dataset + both variants deployable. Hand off to ship (variant green) or debug-sherlock (regression).
 when_to_use: "Keyword triggers — agent eval, eval agent, A/B agent, compare agent, sale agent, hotel agent, reservation agent, forecast agent, agent regression, agent comparison, golden set, RAGAS, eval-driven, eval driven, multi-agent eval, before merge agent, agent quality, sale v2, hotel v2, agent variant, langgraph eval"
 allowed-tools: "Bash(npm *) Bash(npx *) Bash(jq *) Bash(grep *) Bash(rg *) Bash(curl *) Bash(node *) Bash(python3 *) Bash(ls *) Bash(cat *) Bash(mkdir *) Bash(date *) Read Edit Write"
 disable-model-invocation: false
@@ -139,7 +139,7 @@ Compute per-case + aggregate metrics. Output table:
 | p95 latency | 3.2s | 2.9s | -9% |
 | p99 latency | 6.1s | 4.8s | -21% |
 
-### Failure-mode matrix (debug-mantra catalog cross-ref)
+### Failure-mode matrix (debug-sherlock catalog cross-ref)
 
 | Mode | Baseline count | Variant count |
 |---|---|---|
@@ -177,11 +177,11 @@ Update baseline: variant becomes new baseline. Commit golden + new baseline metr
 
 ### REWORK
 
-Variant has quality wins but unacceptable cost/latency tax. Loop to plan + tdd-implement to find cheaper variant. Re-run agent-eval.
+Variant has quality wins but unacceptable cost/latency tax. Loop to plan + tdd-stark to find cheaper variant. Re-run agent-eval.
 
 ### REJECT
 
-Variant adds regression OR fails to move quality. Discard variant. Update breadcrumb ledger (debug-mantra cross-ref) w/ what was tried.
+Variant adds regression OR fails to move quality. Discard variant. Update breadcrumb ledger (debug-sherlock cross-ref) w/ what was tried.
 
 ---
 
@@ -216,7 +216,7 @@ For RAG-side changes, prefer `rag-tune` skill first — agent-eval captures end-
 - **Sequential runs.** Step 2-3 enforce. Concurrent runs = noise.
 - **Same env.** Same Azure deployment, same Kimi, same tenant. Step 2 captures env digest.
 - **Failure-mode catalog mandatory.** Step 4 must include catalog count delta.
-- **Regression test on ship.** Step 5 ties to tdd-implement handoff.
+- **Regression test on ship.** Step 5 ties to tdd-stark handoff.
 - **Cost is a metric.** No silent cost increase.
 
 ## Hand off

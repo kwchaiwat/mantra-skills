@@ -90,7 +90,7 @@ src/
 
 Agents: sale / hotel / reservation / forecast (+ retrieval / revenue / etc).
 4-layer stream pipeline: LLM → backend gate → SSE event splitter → FE consumer.
-Catalog 8 failure modes (see debug-mantra skill).
+Catalog 8 failure modes (see debug-sherlock skill).
 
 Key files (DO NOT edit without tracing callers):
 - `src/modules/langgraph/langgraph-agent.service.ts` (`extractTokenFromEvent`, `ReasoningChannelGate`)

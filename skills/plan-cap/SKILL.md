@@ -1,6 +1,6 @@
 ---
 name: plan-cap
-description: Pre-code planning mantra for your project — state goal, search existing, three alternatives, risk table, task list. Refuse to proceed when goal underspecified. Hand off to tdd-implement when plan accepted. Replaces planning halves of deprecated build-feature and refactor skills.
+description: Pre-code planning mantra for your project — state goal, search existing, three alternatives, risk table, task list. Refuse to proceed when goal underspecified. Hand off to tdd-stark when plan accepted. Replaces planning halves of deprecated build-feature and refactor skills.
 when_to_use: "Keyword triggers — plan, planning, design, scope, where to start, what to build, before code, ออกแบบ, วางแผน, refactor plan, feature plan, scope this, can we add, add feature, build X, implement X, scaffold X, สร้าง, เพิ่ม feature, redesign, restructure"
 allowed-tools: "Bash(git *) Bash(grep *) Bash(rg *) Bash(ls *) Bash(find *) Bash(cat *) Bash(gh *) Read"
 disable-model-invocation: false

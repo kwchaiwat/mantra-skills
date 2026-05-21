@@ -1,6 +1,6 @@
 ---
 name: smoke-spidey
-description: Post-implementation verification mantra for your project — curl golden path, SSE leak assert, multi-tenant isolation, latency budget. Five-step ordered mantra. Hand off to ship if green, debug-mantra if red. Replaces deprecated smoke v1 with explicit numbered mantra.
+description: Post-implementation verification mantra for your project — curl golden path, SSE leak assert, multi-tenant isolation, latency budget. Five-step ordered mantra. Hand off to ship if green, debug-sherlock if red. Replaces deprecated smoke v1 with explicit numbered mantra.
 when_to_use: "Keyword triggers — smoke, smoke test, run smoke, verify chat, verify it work, verify it works, test it, test chat, check it works, before deploy, manual test before deploy, before canary, sanity check, regression test, full smoke, nightly smoke, verify backend, curl test, multi-tenant check, tenant isolation, ทดสอบ chat, ทดสอบ smoke, smoke ดู, verify done, just verify"
 allowed-tools: "Bash(curl *) Bash(docker *) Bash(grep *) Bash(jq *) Bash(sleep *) Bash(date *) Bash(stat *) Bash(awk *) Bash(wc *) Bash(test *) Bash(cat *) Bash(head *) Bash(tail *) Bash(tr *) Bash(python3 *) Bash(mkdir *) Bash(seq *) Bash(printf *) Read Write Edit"
 disable-model-invocation: false
@@ -17,7 +17,7 @@ Recite. Apply in order. Refuse to declare done before step 5.
 > 2. **SSE stream.** Assert no leaked fragments / chain-of-thought / empty bubble.
 > 3. **Multi-tenant.** Same query under tenant-A and tenant-B. Assert isolation.
 > 4. **Latency budget.** p95 within SLO. Log if breach.
-> 5. **Hand off.** ship (green) or debug-mantra (red).
+> 5. **Hand off.** ship (green) or debug-sherlock (red).
 
 Then begin.
 
@@ -83,9 +83,9 @@ Assert NONE of these patterns appear in stream:
 - Static fallback: `"I'm having trouble pulling that information"`
 - Empty assistant turn (zero-length content block)
 
-Each pattern → which catalog mode (see debug-mantra step 2 routing).
+Each pattern → which catalog mode (see debug-sherlock step 2 routing).
 
-If ANY pattern matches → STEP 5 hands off to debug-mantra with stream artifact.
+If ANY pattern matches → STEP 5 hands off to debug-sherlock with stream artifact.
 
 ## Step 3 — Multi-tenant isolation
 
@@ -103,7 +103,7 @@ Assert:
 - Tenant-B response references ONLY tenant-B data
 - Zero overlap between responses on tenant-scoped fields
 
-If any leak → CRITICAL. STOP. Hand off debug-mantra IMMEDIATELY. Block ship.
+If any leak → CRITICAL. STOP. Hand off debug-sherlock IMMEDIATELY. Block ship.
 
 This is project-critical (your project = multi-tenant multi-tenant SaaS).
 
@@ -136,7 +136,7 @@ Steps:
 
 Artifacts: /tmp/smoke-XXX/
 
-Hand off → <ship | debug-mantra>
+Hand off → <ship | debug-sherlock>
 ```
 
 ---
@@ -147,7 +147,7 @@ Hand off → <ship | debug-mantra>
 - **Tenant leak = STOP.** Multi-tenant fail blocks ship absolutely.
 - **Artifacts mandatory.** Every run produces `/tmp/smoke-<ts>/` with stream.txt + jq output.
 - **No silent pass.** If any step skipped, mark verdict yellow + cite skipped step.
-- **Pattern catalog tied to debug-mantra.** Step 2 fail mode names match debug-mantra step 2 routing table.
+- **Pattern catalog tied to debug-sherlock.** Step 2 fail mode names match debug-sherlock step 2 routing table.
 
 ## Hand off
 
@@ -156,4 +156,4 @@ Hand off → <ship | debug-mantra>
 - Step 3 tenant leak → `debug-sherlock` (CRITICAL)
 - Step 4 budget breach → `ship-rocket` w/ note for next plan cycle
 
-result: smoke green or referred to debug-mantra w/ artifact.
+result: smoke green or referred to debug-sherlock w/ artifact.

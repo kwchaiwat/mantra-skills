@@ -6,7 +6,7 @@ allowed-tools: "Bash(npm *) Bash(npx *) Bash(jest *) Bash(node *) Bash(ls *) Bas
 disable-model-invocation: false
 ---
 
-# /tdd-implement — Test-first implementation mantra
+# /tdd-stark — Test-first implementation mantra
 
 Recite. Refuse to write production code before failing test exists.
 
@@ -108,7 +108,7 @@ All three MUST be green. If lint complains → fix code, NOT lint config.
 
 ## Step 5 — Hand off
 
-Pre-handoff: write 1-line ledger entry for take-note-ob:
+Pre-handoff: write 1-line ledger entry for note-kira:
 ```
 <file>:<line> — <what changed> — <why> — <test that proves it>
 ```
