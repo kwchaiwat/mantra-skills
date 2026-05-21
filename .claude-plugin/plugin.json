@@ -1,0 +1,28 @@
+{
+  "name": "mantra-skills",
+  "version": "0.1.0",
+  "description": "21 numbered-mantra Claude Code skills inspired by thananon/9arm-skills + Andrej Karpathy's LLM coding principles. Each skill recites a verbatim mantra (1→2→3→4) with refuse-without gates and explicit hand-off chains. Adopt as-is or fork to customize for your stack.",
+  "author": {
+    "name": "kw-chaiwat",
+    "email": "kw.chaiwat@gmail.com"
+  },
+  "homepage": "https://github.com/kw-chaiwat/mantra-skills",
+  "repository": "https://github.com/kw-chaiwat/mantra-skills",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "skills",
+    "mantra",
+    "9arm",
+    "karpathy",
+    "tdd",
+    "workflow",
+    "debugging",
+    "post-mortem",
+    "rag-tuning",
+    "agent-eval"
+  ],
+  "skills": [
+    "./skills/"
+  ]
+}
